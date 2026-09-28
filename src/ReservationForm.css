@@ -1,0 +1,157 @@
+.reservation-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.reservation-form-wrapper h2 {
+  font-family: 'Karla', sans-serif;
+}
+
+.reservation-form-container {
+  max-width: 400px;
+  width: 100%;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-family: 'Karla', sans-serif;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="range"],
+.form-group select,
+.form-group .date-picker-inputreact-datepicker__input-container input {
+  width: calc(100% - 20px);
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: #EDEFEE;
+  color: #495E57;
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#select-time {
+  text-align: left; 
+  font-size: 14px; 
+}
+
+
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: #EDEFEE;
+  text-align: center;
+  color: #495E57;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Karla', sans-serif;
+}
+
+.occasion-dropdown {
+  position: relative;
+}
+
+.occasion-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #495E57;
+}
+
+.formButton {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  margin-left: 38%;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+.range-container {
+  position: relative;
+}
+
+.range-value {
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  font-weight: bold;
+  color: #495E57;
+}
+
+.accent {
+  accent-color: #495E57;
+}
+
+#select-time-label {
+  display: block;
+  font-weight: bold;
+  font-family: 'Karla', sans-serif;
+  margin-top: 20px; 
+}
+
+#select-time {
+  text-align: left;
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #EDEFEE inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #495E57 !important;
+}
+
+.success-message {
+  background-color: #495E57; 
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+}
+
