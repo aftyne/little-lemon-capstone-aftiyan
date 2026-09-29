@@ -35,11 +35,10 @@ label {
 
 .form-group input[type="text"],
 .form-group input[type="email"],
-.form-group input[type="range"],
+.form-group input[type="number"],
 .form-group select,
 .form-group .date-picker-inputreact-datepicker__input-container input {
   width: calc(100% - 20px);
-  margin-right: 10px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -51,9 +50,18 @@ label {
   font-weight: bold;
 }
 
+.form-group select#occasion {
+  width: 100%;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
 #select-time {
   text-align: left; 
   font-size: 14px; 
+  width: 100%;
 }
 
 

@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import './ReservationForm.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlassCheers } from '@fortawesome/free-solid-svg-icons';
-import { fetchAvailableTimes, updateAvailableTimes } from './MockApi';
+import React, { useState, useEffect } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import "./ReservationForm.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlassCheers } from "@fortawesome/free-solid-svg-icons";
+import { fetchAvailableTimes, updateAvailableTimes } from "./MockApi";
 
 const BookingForm = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [occasion, setOccasion] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [occasion, setOccasion] = useState("");
   const [numGuests, setNumGuests] = useState(1);
   const [errors, setErrors] = useState({});
   const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedTime, setSelectedTime] = useState('');
+  const [selectedTime, setSelectedTime] = useState("");
   const [availableTimes, setAvailableTimes] = useState([]);
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
@@ -33,7 +33,7 @@ const BookingForm = () => {
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
-    setSelectedTime('');
+    setSelectedTime("");
   };
 
   const handleSubmit = async (e) => {
@@ -51,30 +51,30 @@ const BookingForm = () => {
     const errors = {};
 
     if (!firstName.trim()) {
-      errors.firstName = 'First Name is required';
+      errors.firstName = "First Name is required";
       valid = false;
     }
 
     if (!lastName.trim()) {
-      errors.lastName = 'Last Name is required';
+      errors.lastName = "Last Name is required";
       valid = false;
     }
 
     if (!email.trim()) {
-      errors.email = 'Email is required';
+      errors.email = "Email is required";
       valid = false;
     } else if (!emailRegex.test(email)) {
-      errors.email = 'Please enter a valid email address';
+      errors.email = "Please enter a valid email address";
       valid = false;
     }
 
     if (!occasion.trim()) {
-      errors.occasion = 'Occasion is required';
+      errors.occasion = "Occasion is required";
       valid = false;
     }
 
     if (!selectedDate || !selectedTime) {
-      errors.dateTime = 'Date and Time are required';
+      errors.dateTime = "Date and Time are required";
       valid = false;
     }
 
@@ -87,22 +87,22 @@ const BookingForm = () => {
     setEmail(value);
 
     if (!emailRegex.test(value)) {
-      setEmailError('Please enter a valid email address');
+      setEmailError("Please enter a valid email address");
     } else {
-      setEmailError('');
+      setEmailError("");
     }
   };
 
   const resetForm = () => {
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-    setOccasion('');
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setOccasion("");
     setNumGuests(1);
     setSelectedDate(null);
-    setSelectedTime('');
+    setSelectedTime("");
     setErrors({});
-    setEmailError('');
+    setEmailError("");
   };
 
   const timesOptions = availableTimes.map((time) => (
@@ -127,7 +127,11 @@ const BookingForm = () => {
               aria-required="true"
               aria-describedby="firstNameError"
             />
-            {errors.firstName && <span id="firstNameError" className="error">{errors.firstName}</span>}
+            {errors.firstName && (
+              <span id="firstNameError" className="error">
+                {errors.firstName}
+              </span>
+            )}
           </div>
           <div className="form-group">
             <label htmlFor="lastName">Last Name*</label>
@@ -140,7 +144,11 @@ const BookingForm = () => {
               aria-required="true"
               aria-describedby="lastNameError"
             />
-            {errors.lastName && <span id="lastNameError" className="error">{errors.lastName}</span>}
+            {errors.lastName && (
+              <span id="lastNameError" className="error">
+                {errors.lastName}
+              </span>
+            )}
           </div>
           <div className="form-group">
             <label htmlFor="email">Email*</label>
@@ -153,14 +161,22 @@ const BookingForm = () => {
               aria-required="true"
               aria-describedby="emailError"
             />
-            {emailError && <span id="emailError" className="error">{emailError}</span>}
-            {errors.email && <span id="emailError" className="error">{errors.email}</span>}
+            {emailError && (
+              <span id="emailError" className="error">
+                {emailError}
+              </span>
+            )}
+            {errors.email && (
+              <span id="emailError" className="error">
+                {errors.email}
+              </span>
+            )}
           </div>
-          <div className="form-group range-container">
+          <div className="form-group">
             <label htmlFor="numGuests">Number of Guests*</label>
             <input
               className="accent"
-              type="range"
+              type="number"
               id="numGuests"
               min="1"
               max="10"
@@ -193,7 +209,11 @@ const BookingForm = () => {
                 <option value="anniversary">Anniversary</option>
               </select>
             </div>
-            {errors.occasion && <span id="occasionError" className="error">{errors.occasion}</span>}
+            {errors.occasion && (
+              <span id="occasionError" className="error">
+                {errors.occasion}
+              </span>
+            )}
           </div>
           <div className="form-group">
             <label htmlFor="dateTime">Date*</label>
@@ -228,7 +248,11 @@ const BookingForm = () => {
                 </select>
               </div>
             )}
-            {errors.dateTime && <span id="dateTimeError" className="error">{errors.dateTime}</span>}
+            {errors.dateTime && (
+              <span id="dateTimeError" className="error">
+                {errors.dateTime}
+              </span>
+            )}
           </div>
           <button className="formButton" type="submit">
             Submit
